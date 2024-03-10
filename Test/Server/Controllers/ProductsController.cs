@@ -16,12 +16,10 @@ namespace Test.Server.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly IPdfGenerationService _pdfGenerationService;
 
-        public ProductsController(ApplicationDbContext context, IPdfGenerationService pdfGenerationService)
+        public ProductsController(ApplicationDbContext context)
         {
             _context = context;
-            _pdfGenerationService = pdfGenerationService;
         }
 
         // GET: api/Products
@@ -62,23 +60,13 @@ namespace Test.Server.Controllers
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct(string id, RequestProduct requestProduct)
+        public async Task<IActionResult> PutProduct(string id, Product product)
         {
-            if (requestProduct.Model.IsNullOrEmpty())
+            if (id != product.Id)
             {
                 return NoContent();
             }
 
-            var existingProduct = await _context.Product.FindAsync(id);
-            if (existingProduct == null)
-            {
-                return NotFound();
-            }
-
-            var product = requestProduct.Adapt<Product>();
-            product.Id = id;
-            
-            _context.Entry(existingProduct).CurrentValues.SetValues(product);
             _context.Entry(product).State = EntityState.Modified;
 
             try
@@ -151,16 +139,6 @@ namespace Test.Server.Controllers
             return (_context.Product?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
-        [HttpGet("ExportToPdf")]
-        public async Task<IActionResult> ExportToPdf(string nombreDeArchivo)
-        {
-            List<Product> products = await _context.Product.ToListAsync();
-
-            // Generar el archivo PDF utilizando el servicio PdfGenerationService
-            byte[] pdfBytes = await _pdfGenerationService.GeneratePdf(nombreDeArchivo, products);
-
-            // Devolver el archivo PDF como una respuesta HTTP
-            return File(pdfBytes, "application/pdf", nombreDeArchivo);
-        }
+       
     }
 }

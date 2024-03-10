@@ -19,7 +19,7 @@ public static class ServerExtensions
         services.AddConfigurationMapster(configuration);
         services.AddConfigurationJWT(configuration);
         services.AddConfigurationIdentity(configuration);
-        services.AddConfigurationPdfGeneration(configuration);
+       
 
     }
 
@@ -70,9 +70,6 @@ public static class ServerExtensions
         .AddEntityFrameworkStores<ApplicationDbContext>();
     }
 
-    public static void AddConfigurationPdfGeneration(this IServiceCollection services, IConfiguration configuration)
-    {
-        services.AddTransient<IPdfGenerationService, PdfGenerationService>();
-    }
+ 
 
 }

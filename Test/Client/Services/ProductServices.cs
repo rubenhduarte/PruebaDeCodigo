@@ -176,43 +176,5 @@ public class ProductServices : IProductServices
         return list;
     }
 
-    public async Task<byte[]> ExportToPdf(string NombreDeArchivo, List<Product> products)
-    {
-        try
-        {
-            HttpResponseMessage response = await Http.GetAsync($"api/Products/ExportToPdf?nombreDeArchivo={NombreDeArchivo}");
-
-            // Verificar si la solicitud fue exitosa
-            response.EnsureSuccessStatusCode();
-
-            // Leer el contenido del archivo PDF como un array de bytes
-            byte[] pdfBytes = await response.Content.ReadAsByteArrayAsync();
-
-            //// Devolver el array de bytes del PDF
-
-            //if (response.IsSuccessStatusCode)
-            //{
-            //    try
-            //    {
-            //        File.WriteAllBytes(NombreDeArchivo, pdfBytes);
-            //    }
-            //    catch (Exception ex)
-            //    { 
-                
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine($"Error al generar el archivo PDF: {response.StatusCode}");
-            //}
-            return pdfBytes;
-
-
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error al generar el archivo PDF: {ex.Message}");
-            return null;
-        }
-    }
+   
 }

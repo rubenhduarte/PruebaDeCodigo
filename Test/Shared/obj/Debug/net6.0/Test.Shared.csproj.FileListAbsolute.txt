@@ -22,3 +22,4 @@ D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.dll
 D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\refint\Test.Shared.dll
 D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.pdb
 D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\ref\Test.Shared.dll
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.csproj.AssemblyReference.cache

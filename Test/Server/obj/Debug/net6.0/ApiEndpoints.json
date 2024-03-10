@@ -32,6 +32,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Test.Server.Controllers.ExcelController",
+    "Method": "ExportExcel1",
+    "RelativePath": "api/Excel/ExportarTodosLosProductos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Test.Server.Controllers.ProductsController",
     "Method": "GetAllProducts",
     "RelativePath": "api/Products",
@@ -117,8 +127,8 @@
         "IsRequired": true
       },
       {
-        "Name": "requestProduct",
-        "Type": "Test.Shared.Entities.DTO.RequestProduct",
+        "Name": "product",
+        "Type": "Test.Shared.Entities.DataBase.Product",
         "IsRequired": true
       }
     ],
@@ -136,22 +146,6 @@
         "Name": "id",
         "Type": "System.String",
         "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Test.Server.Controllers.ProductsController",
-    "Method": "ExportToPdf",
-    "RelativePath": "api/Products/ExportToPdf",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "nombreDeArchivo",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []

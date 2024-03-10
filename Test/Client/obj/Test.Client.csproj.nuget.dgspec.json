@@ -66,6 +66,10 @@
               "target": "Package",
               "version": "[7.1.0, )"
             },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.2, )"
+            },
             "Microsoft.AspNetCore.Authentication.Abstractions": {
               "target": "Package",
               "version": "[2.2.0, )"
@@ -202,6 +206,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.102.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

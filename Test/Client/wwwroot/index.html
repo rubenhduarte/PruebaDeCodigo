@@ -28,11 +28,30 @@
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <script>
-        window.GenerarPDF = async () => {
+        window.GenerarPDF = async (contentStreamReference) => {
 
-            var pdf = new jsPDF();
-            pdf.text(30, 30, 'Hello world!, Hello Blazor wasm');
-            pdf.save('hello_world.pdf');
+            const arrayBuffer = await contentStreamReference.arrayBuffer();
+            const blob = new Blob([arrayBuffer]);
+            const url = URL.createObjectURL(blob);
+            const anchorElement = document.createElement('a');
+            anchorElement.href = url;
+            anchorElement.download = "Reporte.xlsx";
+            anchorElement.click();
+            anchorElement.remove;
+            URL.revokeObjectURL(url);
+        }
+    </script>
+    <script>
+        window.DescargarExcel = async (contentStreamReference) => {
+            const arrayBuffer = await contentStreamReference.arrayBuffer();
+            const blob = new Blob([arrayBuffer]);
+            const url = URL.createObjectURL(blob);
+            const anchorElement = document.createElement('a');
+            anchorElement.href = url;
+            anchorElement.download = "Reporte.xlsx";
+            anchorElement.click();
+            anchorElement.remove;
+            URL.revokeObjectURL(url);
         }
     </script>
 

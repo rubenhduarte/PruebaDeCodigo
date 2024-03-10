@@ -24,13 +24,13 @@
                 <EditForm Model="@product" OnValidSubmit="OnSubmit">
                     <DataAnnotationsValidator />
                     <div class="form-group">
-                        <MudTextField @bind-Value="product.Name" For="@(() => product.Name)" Label="Name" Variant="Variant.Outlined" Class="m-3"></MudTextField>
+                        <MudTextField @bind-Value="product.Name" For="@(() => product.Name)" Label="Nombre" Variant="Variant.Outlined" Class="m-3"></MudTextField>
                     </div>
                     <div class="form-group">
-                        <MudTextField @bind-Value="product.Model" For="@(() => product.Model)" Label="Model" Variant="Variant.Outlined" Class="m-3"></MudTextField>
+                        <MudTextField @bind-Value="product.Model" For="@(() => product.Model)" Label="Modelo" Variant="Variant.Outlined" Class="m-3"></MudTextField>
                     </div>
                     <div class="form-group">
-                        <MudTextField T="string" For="@(() => product.Description)" Label="Descripción" Variant="Variant.Outlined" Text="@product.Description" Class="m-3" Lines="3" />
+                        <MudTextField @bind-Value="product.Description" For="@(() => product.Description)" Label="Descripcion" Variant="Variant.Outlined" Class="m-3"></MudTextField>
                     </div>
                     <div class="form-group">
                         @*                <InputNumber @bind-Value="product.Price" class="form-control" />
@@ -40,7 +40,7 @@
                     <div class="form-group">
                         @*<p>Select a file <InputFile OnChange="@LoadFiles" accept=".png,.bmp,.jpg,.jpeg" /></p>*@
                         <MudText>Select a file:</MudText>
-                        <MudFileUpload T="IBrowserFile" FilesChanged="LoadFile" Class="m-3" Label="Photo">
+                        <MudFileUpload T="IBrowserFile" FilesChanged="LoadFile" Class="m-3" Label="Foto">
                             <ButtonTemplate Context="cotx">
                                 <MudButton HtmlTag="label"
                                            Variant="Variant.Filled"

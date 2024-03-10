@@ -10,5 +10,4 @@ public interface IProductServices
     Task <AppResult> DeleteProduct(string id);
     Task <AppResult> AddProduct(Product product);
     Task <AppResult> UpdateProduct(Product product);
-    Task<Byte[]> ExportToPdf(string NombreDeArchivo, List<Product> products);
 }
