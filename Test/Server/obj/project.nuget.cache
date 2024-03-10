@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dCAcxeOCgbZ2gA6DnUDCibHOZ3XHzReV2Nsp4KHReHsmYuQVnhlPZey/EC87ZTLbjmpNQNZsWBdFO3EY5HWGWg==",
+  "dgSpecHash": "Tk2RZPWwwlrXuNhFPLc+Vwa1P5ywYXb8THkXxFM0I6p4G0GtFxOD137pre+crbREM41ztlvJiepLF94ZNCKHig==",
   "success": true,
-  "projectFilePath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Server\\Test.Server.csproj",
+  "projectFilePath": "D:\\pdfnuevos\\Test\\Server\\Test.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ruben\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\Ruben\\.nuget\\packages\\blazored.localstorage\\4.3.0\\blazored.localstorage.4.3.0.nupkg.sha512",

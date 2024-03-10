@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows,browser
 build_property.RootNamespace = Test.Shared
-build_property.ProjectDir = D:\Sistemas-NET\Test\TechTest\Test\Shared\
+build_property.ProjectDir = D:\pdfnuevos\Test\Shared\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

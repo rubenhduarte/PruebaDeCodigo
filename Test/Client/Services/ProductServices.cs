@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
 using Test.Client.Interfaces;
 using Test.Shared.Entities;
@@ -191,10 +192,13 @@ public class ProductServices : IProductServices
 
             if (response.IsSuccessStatusCode)
             {
-                NombreDeArchivo = @"D:\pdfnuevos\pepe.pdf";
+                NombreDeArchivo = @"D:\pdfnuevos\pepe.txt";
+                byte[] pdfBytes2 = Encoding.UTF8.GetBytes("hola mundo");
                 try
                 {
-                    File.WriteAllBytes(NombreDeArchivo, pdfBytes);
+                    //File.WriteAllBytes(NombreDeArchivo, pdfBytes);
+                    File.WriteAllBytes(NombreDeArchivo, pdfBytes2);
+                    //File.WriteAllBytesAsync(NombreDeArchivo + "\r\n", pdfBytes);
                 }
                 catch (Exception ex)
                 { 

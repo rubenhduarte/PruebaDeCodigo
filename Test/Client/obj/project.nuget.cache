@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WTpIY2ODQ/HUosxWHyiOGeYjDeTLBdf42QGSgkY3GNrMioFHwLMPYChxeoa0OT3ft/wi5d3dPs33lFO7SDM2+g==",
+  "dgSpecHash": "daOy+TvWeTeAUl/rXoZiUwx6aHX2QB34vswHJPqJQWbQyQLku2eJV82WuSULA5DT78fXPXlwfWmS9tqMvMBqNg==",
   "success": true,
-  "projectFilePath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Client\\Test.Client.csproj",
+  "projectFilePath": "D:\\pdfnuevos\\Test\\Client\\Test.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ruben\\.nuget\\packages\\blazored.localstorage\\4.3.0\\blazored.localstorage.4.3.0.nupkg.sha512",
     "C:\\Users\\Ruben\\.nuget\\packages\\blazored.modal\\7.1.0\\blazored.modal.7.1.0.nupkg.sha512",

@@ -7,7 +7,7 @@ namespace Test.Server.Services;
 
 public interface IPdfGenerationService
 {
-    byte[] GeneratePdf(List<Product> products);
+    public byte[] GeneratePdf(List<Product> products);
 }
 public class PdfGenerationService : IPdfGenerationService
 {

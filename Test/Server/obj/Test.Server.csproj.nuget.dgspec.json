@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Server\\Test.Server.csproj": {}
+    "D:\\pdfnuevos\\Test\\Server\\Test.Server.csproj": {}
   },
   "projects": {
-    "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Client\\Test.Client.csproj": {
+    "D:\\pdfnuevos\\Test\\Client\\Test.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Client\\Test.Client.csproj",
+        "projectUniqueName": "D:\\pdfnuevos\\Test\\Client\\Test.Client.csproj",
         "projectName": "Test.Client",
-        "projectPath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Client\\Test.Client.csproj",
+        "projectPath": "D:\\pdfnuevos\\Test\\Client\\Test.Client.csproj",
         "packagesPath": "C:\\Users\\Ruben\\.nuget\\packages\\",
-        "outputPath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Client\\obj\\",
+        "outputPath": "D:\\pdfnuevos\\Test\\Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -37,8 +37,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Shared\\Test.Shared.csproj": {
-                "projectPath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Shared\\Test.Shared.csproj"
+              "D:\\pdfnuevos\\Test\\Shared\\Test.Shared.csproj": {
+                "projectPath": "D:\\pdfnuevos\\Test\\Shared\\Test.Shared.csproj"
               }
             }
           }
@@ -153,14 +153,14 @@
         }
       }
     },
-    "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Server\\Test.Server.csproj": {
+    "D:\\pdfnuevos\\Test\\Server\\Test.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Server\\Test.Server.csproj",
+        "projectUniqueName": "D:\\pdfnuevos\\Test\\Server\\Test.Server.csproj",
         "projectName": "Test.Server",
-        "projectPath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Server\\Test.Server.csproj",
+        "projectPath": "D:\\pdfnuevos\\Test\\Server\\Test.Server.csproj",
         "packagesPath": "C:\\Users\\Ruben\\.nuget\\packages\\",
-        "outputPath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Server\\obj\\",
+        "outputPath": "D:\\pdfnuevos\\Test\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -186,11 +186,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Client\\Test.Client.csproj": {
-                "projectPath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Client\\Test.Client.csproj"
+              "D:\\pdfnuevos\\Test\\Client\\Test.Client.csproj": {
+                "projectPath": "D:\\pdfnuevos\\Test\\Client\\Test.Client.csproj"
               },
-              "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Shared\\Test.Shared.csproj": {
-                "projectPath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Shared\\Test.Shared.csproj"
+              "D:\\pdfnuevos\\Test\\Shared\\Test.Shared.csproj": {
+                "projectPath": "D:\\pdfnuevos\\Test\\Shared\\Test.Shared.csproj"
               }
             }
           }
@@ -288,14 +288,14 @@
         }
       }
     },
-    "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Shared\\Test.Shared.csproj": {
+    "D:\\pdfnuevos\\Test\\Shared\\Test.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Shared\\Test.Shared.csproj",
+        "projectUniqueName": "D:\\pdfnuevos\\Test\\Shared\\Test.Shared.csproj",
         "projectName": "Test.Shared",
-        "projectPath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Shared\\Test.Shared.csproj",
+        "projectPath": "D:\\pdfnuevos\\Test\\Shared\\Test.Shared.csproj",
         "packagesPath": "C:\\Users\\Ruben\\.nuget\\packages\\",
-        "outputPath": "D:\\Sistemas-NET\\Test\\TechTest\\Test\\Shared\\obj\\",
+        "outputPath": "D:\\pdfnuevos\\Test\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
