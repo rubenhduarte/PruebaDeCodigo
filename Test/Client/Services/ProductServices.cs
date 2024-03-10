@@ -188,23 +188,19 @@ public class ProductServices : IProductServices
             // Leer el contenido del archivo PDF como un array de bytes
             byte[] pdfBytes = await response.Content.ReadAsByteArrayAsync();
 
-            // Devolver el array de bytes del PDF
+            //// Devolver el array de bytes del PDF
 
-            if (response.IsSuccessStatusCode)
-            {
-                NombreDeArchivo = @"D:\pdfnuevos\pepe.txt";
-                byte[] pdfBytes2 = Encoding.UTF8.GetBytes("hola mundo");
-                try
-                {
-                    //File.WriteAllBytes(NombreDeArchivo, pdfBytes);
-                    File.WriteAllBytes(NombreDeArchivo, pdfBytes2);
-                    //File.WriteAllBytesAsync(NombreDeArchivo + "\r\n", pdfBytes);
-                }
-                catch (Exception ex)
-                { 
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    try
+            //    {
+            //        File.WriteAllBytes(NombreDeArchivo, pdfBytes);
+            //    }
+            //    catch (Exception ex)
+            //    { 
                 
-                }
-            }
+            //    }
+            //}
             //else
             //{
             //    Console.WriteLine($"Error al generar el archivo PDF: {response.StatusCode}");

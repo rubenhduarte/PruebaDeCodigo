@@ -3,6 +3,7 @@
 @using Test.Shared.Entities.DataBase
 @inject NavigationManager NavigationManager
 @inject IProductServices productServices
+@inject IJSRuntime JSRuntime
 
 
 <div class="container">
@@ -24,12 +25,45 @@
 @code {
     private string nombreArchivo;
 
-    private void Exportar()
+    private async Task Exportar()
     {
-         var tempo = productServices.ExportToPdf(this.nombreArchivo);
+        var allProducts = await productServices.GetAllProduct();
+        if (allProducts != null && allProducts.Any())
+         //var tempo = productServices.ExportToPdf(this.nombreArchivo);
+        //if (!string.IsNullOrEmpty(nombreArchivo))
+        {
+            // Llama al servicio para obtener los bytes del archivo PDF
+            byte[] pdfBytes = await productServices.ExportToPdf(nombreArchivo, allProducts);
+
+            // Verifica si se obtuvieron los bytes del PDF
+            if (pdfBytes != null && pdfBytes.Length > 0)
+            {
+                // Crea un enlace de descarga en el navegador para el archivo PDF
+                await JSRuntime.InvokeVoidAsync("BlazorDownloadFile", new
+                {
+                    ByteArray = pdfBytes,
+                    FileName = $"{nombreArchivo}.pdf"
+                });
+            }
+        }
+         
     }
     private void Volver()
     {
         NavigationManager.NavigateTo($"product/");
     }
 }
+<script>
+    window.BlazorDownloadFile = (data) => {
+        const byteArray = new Uint8Array(data.ByteArray);
+        const blob = new Blob([byteArray], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = data.FileName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+    };
+</script>

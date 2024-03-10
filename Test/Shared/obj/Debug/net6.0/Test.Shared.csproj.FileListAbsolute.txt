@@ -10,3 +10,15 @@ D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\Test.Shared.dll
 D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\refint\Test.Shared.dll
 D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\Test.Shared.pdb
 D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\ref\Test.Shared.dll
+D:\pdfnuevos\Test\Shared\bin\Debug\net6.0\Test.Shared.deps.json
+D:\pdfnuevos\Test\Shared\bin\Debug\net6.0\Test.Shared.dll
+D:\pdfnuevos\Test\Shared\bin\Debug\net6.0\Test.Shared.pdb
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.AssemblyInfoInputs.cache
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.AssemblyInfo.cs
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.csproj.CoreCompileInputs.cache
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.sourcelink.json
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.dll
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\refint\Test.Shared.dll
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\Test.Shared.pdb
+D:\pdfnuevos\Test\Shared\obj\Debug\net6.0\ref\Test.Shared.dll
