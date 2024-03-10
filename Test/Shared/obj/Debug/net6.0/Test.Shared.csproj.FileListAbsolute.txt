@@ -1,0 +1,12 @@
+D:\Sistemas-NET\Test\TechTest\Test\Shared\bin\Debug\net6.0\Test.Shared.deps.json
+D:\Sistemas-NET\Test\TechTest\Test\Shared\bin\Debug\net6.0\Test.Shared.dll
+D:\Sistemas-NET\Test\TechTest\Test\Shared\bin\Debug\net6.0\Test.Shared.pdb
+D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\Test.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\Test.Shared.AssemblyInfoInputs.cache
+D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\Test.Shared.AssemblyInfo.cs
+D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\Test.Shared.csproj.CoreCompileInputs.cache
+D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\Test.Shared.sourcelink.json
+D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\Test.Shared.dll
+D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\refint\Test.Shared.dll
+D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\Test.Shared.pdb
+D:\Sistemas-NET\Test\TechTest\Test\Shared\obj\Debug\net6.0\ref\Test.Shared.dll

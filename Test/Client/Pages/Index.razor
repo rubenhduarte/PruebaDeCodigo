@@ -1,0 +1,21 @@
+﻿@page "/"
+@using Test.Client.Interfaces;
+@using Test.Client.Services;
+@using Test.Shared.Entities.DataBase;
+@using Test.Shared.Entities;
+@inject IProductServices productServices
+@inject NavigationManager NavigationManager
+@inject IModalService modal
+<div class="container">
+    <div class="container-fluid">
+        <MudText Typo="Typo.h3" class="p-3 text-center">Página de inicio</MudText>
+        <hr />
+        <MudCard Class="p-4">
+            <MudCardContent>
+                <MudText>Debe ingresar con su usuario y contraseña para poder ver el listado de productos.</MudText>
+            </MudCardContent>
+        </MudCard>
+       
+    </div>
+
+</div>

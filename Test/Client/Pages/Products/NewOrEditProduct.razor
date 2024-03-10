@@ -1,0 +1,153 @@
+﻿@page "/product/NewOrEdit"
+@page "/product/NewOrEdit/{id?}"
+@using Microsoft.Extensions.Primitives;
+@using Test.Client.Interfaces;
+@using Test.Shared.Entities;
+@using Test.Shared.Entities.DataBase;
+@inject IProductServices productServices
+@inject NavigationManager NavigationManager
+@using Microsoft.AspNetCore.Hosting;
+
+<div class="container">
+    @if (id == null)
+    {
+        <MudText Typo="Typo.h3" class="p-3 text-center">Nuevo Producto</MudText>
+    }
+    else
+    {
+        <MudText Typo="Typo.h3" class="p-3 text-center">Modifica Producto</MudText>       
+    }
+    <div class="container-fluid ">
+        <MudCard class="p-4">
+            
+            <MudCardContent>
+                <EditForm Model="@product" OnValidSubmit="OnSubmit">
+                    <DataAnnotationsValidator />
+                    <div class="form-group">
+                        <MudTextField @bind-Value="product.Name" For="@(() => product.Name)" Label="Name" Variant="Variant.Outlined" Class="m-3"></MudTextField>
+                    </div>
+                    <div class="form-group">
+                        <MudTextField @bind-Value="product.Model" For="@(() => product.Model)" Label="Model" Variant="Variant.Outlined" Class="m-3"></MudTextField>
+                    </div>
+                    <div class="form-group">
+                        <MudTextField T="string" For="@(() => product.Description)" Label="Descripción" Variant="Variant.Outlined" Text="@product.Description" Class="m-3" Lines="3" />
+                    </div>
+                    <div class="form-group">
+                        @*                <InputNumber @bind-Value="product.Price" class="form-control" />
+                        <ValidationMessage  />*@
+                        <MudNumericField @bind-Value="@product.Price" For="@(() => product.Price)" Label="Precio" Variant="Variant.Outlined" Class="m-3" />
+                    </div>
+                    <div class="form-group">
+                        @*<p>Select a file <InputFile OnChange="@LoadFiles" accept=".png,.bmp,.jpg,.jpeg" /></p>*@
+                        <MudText>Select a file:</MudText>
+                        <MudFileUpload T="IBrowserFile" FilesChanged="LoadFile" Class="m-3" Label="Photo">
+                            <ButtonTemplate Context="cotx">
+                                <MudButton HtmlTag="label"
+                                           Variant="Variant.Filled"
+                                           Color="Color.Primary"
+                                           for="@cotx">
+                                    Select a File
+                                </MudButton>
+                            </ButtonTemplate>
+                            <SelectedTemplate Context="selCtx">
+                                @if (selCtx != null)
+                                {
+                                    <MudText>@selCtx.Name</MudText>
+                                }
+                                else
+                                {
+                                    <hr />
+                                }
+                            </SelectedTemplate>
+                        </MudFileUpload>
+                        <ValidationMessage For="@(() => product.Photo)" />
+                    </div>
+
+
+                    <br />
+                    <div class="d-flex justify-content-between">
+                        <MudLink Href="product" class="btn btn-link" Color="Color.Secondary">Cancel</MudLink>
+                        @if (!IsNew)
+                        {
+                            <MudButton Variant="Variant.Filled" ButtonType=ButtonType.Submit EndIcon="@Icons.Material.Filled.Save" Style="background-color: yellowgreen; color: white; width: 200px; height: 60px;">
+                                Save
+                            </MudButton>
+                        }
+                        else
+                        {
+                            <MudButton Variant="Variant.Filled" ButtonType=ButtonType.Submit EndIcon="@Icons.Material.Filled.Add" Style="background-color: yellowgreen; color: white; width: 200px; height: 60px;">
+                                Add
+                            </MudButton>
+                        }
+
+                        
+                    </div>
+                   
+                </EditForm>
+            </MudCardContent>
+        </MudCard>
+    </div>
+</div>
+@code {
+
+    MarkupString ValidationString;
+    [Parameter]
+    public string? id { get; set; }
+    private Product product = new Product();
+    [Parameter]
+    public EventCallback<object?> ProductCallback { get; set; }
+    private bool loading;
+    private bool IsNew;
+    public List<string> ImgList { get; set; } = new List<string>();
+    private const int maxImageSize = 2 * 1024 * 1024;
+    protected override async Task OnInitializedAsync()
+    {
+        IsNew = true;
+        if (!string.IsNullOrEmpty(id))
+        {
+            IsNew = false;
+            // Si se proporciona un ID válido, obtener los datos del producto
+            product = await productServices.GetProductById(id);
+        }
+
+    }
+    public async Task OnSubmit()
+    {
+        AppResult result = new AppResult();
+        if (IsNew)
+            result = await productServices.AddProduct(product);
+        else
+        {
+            result = await productServices.UpdateProduct(product);
+        }
+        NavigationManager.NavigateTo("/product");
+        await ProductCallback.InvokeAsync(product);
+
+    }
+    async Task OnChangeImage(InputFileChangeEventArgs e)
+    {
+        foreach (var archivo in e.GetMultipleFiles())
+        {
+            using var stream = archivo.OpenReadStream(maxImageSize);
+            using var ms = new MemoryStream();
+            await stream.CopyToAsync(ms);
+            ImgList.Add($"data:{archivo.ContentType};base64,{Convert.ToBase64String(ms.ToArray())}");
+        }
+    }
+    private async Task LoadFile(IBrowserFile file)
+    {
+        loading = true;
+        try
+        {
+            using var stream = file.OpenReadStream();
+            using var ms = new MemoryStream();
+            await stream.CopyToAsync(ms);
+            product.Photo = ($"data:{file.ContentType};base64,{Convert.ToBase64String(ms.ToArray())}");
+        }
+        catch (Exception ex)
+        {
+        }
+        loading = false;
+    }
+}
+

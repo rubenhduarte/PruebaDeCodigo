@@ -1,0 +1,20 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <div class="sidebar">
+        <MudThemeProvider />
+        <MudDialogProvider />
+        <MudSnackbarProvider />
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <LoginDisplay />
+        </div>
+
+        <article class="content px-4 bg-light">
+            @Body
+        </article>
+    </main>
+</div>

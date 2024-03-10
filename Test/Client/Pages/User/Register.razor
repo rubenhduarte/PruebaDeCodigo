@@ -1,0 +1,46 @@
+﻿@page "/register"
+
+<div class="container-fluid ">
+    <MudText Typo="Typo.h3" class="p-3 text-center">Register user</MudText>
+    <hr class="w-100" />
+    <div class="p-4 w-100">
+        @if (ShowRegistrationErros)
+        {
+            <hr />
+            <MudText Color="@Color.Error" Class="m-4">
+                @foreach (var error in Errors)
+                {
+                    <p>@error</p>
+                }
+            </MudText>
+        }
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="p-5">
+            <EditForm Model="_registerModel" OnValidSubmit="RegisterUser" class="card card-body bg-light mt-5">
+
+                <DataAnnotationsValidator />
+                <MudCard Class="p-5">
+                    <MudCardContent>
+
+                        <MudTextField Label="Email" Class="mt-3"
+                        @bind-Value="_registerModel.Email" For="@(() => _registerModel.Email)" />
+
+                        <MudTextField Label="Password" HelperText="Ingrese una password complejo" Class="mt-3"
+                        @bind-Value="_registerModel.Password" For="@(() => _registerModel.Password)" InputType="InputType.Password" />
+
+                        <MudTextField Label="Password" HelperText="Repita el password" Class="mt-3"
+                        @bind-Value="_registerModel.ConfirmPassword" For="@(() => _registerModel.ConfirmPassword)" InputType="InputType.Password" />
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Register</MudButton>
+                    </MudCardActions>
+                </MudCard>
+
+            </EditForm>
+        </div>
+
+    </div>
+
+
+</div>
