@@ -176,7 +176,7 @@ public class ProductServices : IProductServices
         return list;
     }
 
-    public async Task<byte[]> ExportToPdf(string NombreDeArchivo)
+    public async Task<byte[]> ExportToPdf(string NombreDeArchivo, List<Product> products)
     {
         try
         {

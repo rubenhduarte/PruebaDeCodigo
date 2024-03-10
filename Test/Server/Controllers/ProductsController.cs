@@ -157,7 +157,7 @@ namespace Test.Server.Controllers
             List<Product> products = await _context.Product.ToListAsync();
 
             // Generar el archivo PDF utilizando el servicio PdfGenerationService
-            byte[] pdfBytes = _pdfGenerationService.GeneratePdf(products);
+            byte[] pdfBytes = await _pdfGenerationService.GeneratePdf(nombreDeArchivo, products);
 
             // Devolver el archivo PDF como una respuesta HTTP
             return File(pdfBytes, "application/pdf", nombreDeArchivo);

@@ -8,11 +8,11 @@ namespace Test.Server.Services;
 
 public interface IPdfGenerationService
 {
-    Task<byte[]> GeneratePdf(List<Product> products);
+    Task<byte[]> GeneratePdf(string nombreDeArchivo, List<Product> products);
 }
 public class PdfGenerationService : IPdfGenerationService
 {
-    public async Task<byte[]> GeneratePdf(List<Product> products)
+    public async Task<byte[]> GeneratePdf(string nombreDeArchivo, List<Product> products)
     {
         // Crear un nuevo documento PDF
         using (PdfDocument document = new PdfDocument())

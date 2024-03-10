@@ -6,6 +6,7 @@
 @inject IJSRuntime JSRuntime
 
 
+
 <div class="container">
 
     <MudText Typo="Typo.h3" class="p-3 text-center">Exportar productos a PDF</MudText>
@@ -29,22 +30,29 @@
     {
         var allProducts = await productServices.GetAllProduct();
         if (allProducts != null && allProducts.Any())
-         //var tempo = productServices.ExportToPdf(this.nombreArchivo);
+        //var tempo = productServices.ExportToPdf(this.nombreArchivo);
         //if (!string.IsNullOrEmpty(nombreArchivo))
         {
             // Llama al servicio para obtener los bytes del archivo PDF
             byte[] pdfBytes = await productServices.ExportToPdf(nombreArchivo, allProducts);
 
             // Verifica si se obtuvieron los bytes del PDF
-            if (pdfBytes != null && pdfBytes.Length > 0)
-            {
-                // Crea un enlace de descarga en el navegador para el archivo PDF
-                await JSRuntime.InvokeVoidAsync("BlazorDownloadFile", new
-                {
-                    ByteArray = pdfBytes,
-                    FileName = $"{nombreArchivo}.pdf"
-                });
-            }
+             if (pdfBytes != null && pdfBytes.Length > 0)
+             {
+                 // Crea un enlace de descarga en el navegador para el archivo PDF
+                 await JSRuntime.InvokeVoidAsync("BlazorDownloadFile", new
+                 {
+                     ByteArray = pdfBytes,
+                     FileName = $"{nombreArchivo}.pdf"
+                 });
+             }
+
+            // if (pdfBytes != null && pdfBytes.Length > 0)
+            // {
+                
+            //     await JSRuntime.InvokeVoidAsync("GenerarPDF",pdfBytes);
+            // }
+
         }
          
     }
@@ -54,7 +62,7 @@
     }
 }
 <script>
-    window.BlazorDownloadFile = (data) => {
+    window.BlazorDownloadFile = async(data) => {
         const byteArray = new Uint8Array(data.ByteArray);
         const blob = new Blob([byteArray], { type: 'application/pdf' });
         const url = URL.createObjectURL(blob);
